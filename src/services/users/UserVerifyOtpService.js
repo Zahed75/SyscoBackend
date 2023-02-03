@@ -1,10 +1,14 @@
 const UserVerifyOtpService = async (Request, DataModel) => {
     try {
+        //First Process
+
         let email = Request.params.email;
         let OTPCode = Request.params.otp;
         let status = 0;
         let statusUpdate = 1;
         let OTPCount = await DataModel.aggregate([{
+
+
             $match: {
                 email: email,
                 otp: OTPCode,
@@ -12,6 +16,7 @@ const UserVerifyOtpService = async (Request, DataModel) => {
             }
         }, {$count: "total"}])
         if (OTPCount.length > 0) {
+            //Second Process
             let OTPUpdate = await DataModel.updateOne({email: email, otp: OTPCode, status: status}, {
                 email: email,
                 otp: OTPCode,
