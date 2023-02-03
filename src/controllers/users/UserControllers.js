@@ -10,7 +10,6 @@ const UserVerifyOtpService = require("../../services/users/UserVerifyOtpService"
 const UserVerifyEmailService = require("../../services/users/UserVerifyEmailService");
 
 
-
 // User Registrations
 exports.Registration = async (req, res) => {
     let Result = await UserCreateService(req, DataModel)
@@ -19,15 +18,24 @@ exports.Registration = async (req, res) => {
 
 //User Login
 
-exports.Login=async (req,res)=>{
-    let Result=await UserLoginService(req,DataModel)
+exports.Login = async (req, res) => {
+    let Result = await UserLoginService(req, DataModel)
     res.status(200).json(Result)
 }
 
 
 //User Profile Update
 
-exports.ProfileUpdate=async (req,res)=>{
+exports.ProfileUpdate = async (req, res) => {
+    let Result = await UserUpdateService(req, DataModel)
+    res.status(200).json(Result)
+}
 
+
+// User profile Details
+
+exports.ProfileDetails = async (req, res) => {
+    let Result = await UserDetailsService(req, DataModel)
+    res.status(200).json(Result)
 }
 
