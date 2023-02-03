@@ -1,6 +1,6 @@
 const UserVerifyOtpService = async (Request, DataModel) => {
     try {
-        //First Process
+        //First Process Databse user data newa
 
         let email = Request.params.email;
         let OTPCode = Request.params.otp;
@@ -16,7 +16,7 @@ const UserVerifyOtpService = async (Request, DataModel) => {
             }
         }, {$count: "total"}])
         if (OTPCount.length > 0) {
-            //Second Process
+            //Second Process Data Update kore dewa
             let OTPUpdate = await DataModel.updateOne({email: email, otp: OTPCode, status: status}, {
                 email: email,
                 otp: OTPCode,
