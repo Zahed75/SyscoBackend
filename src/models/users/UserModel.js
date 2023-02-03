@@ -1,13 +1,13 @@
-const mongoose=require('mongoose');
-const {model} = require("mongoose");
-const DataSchema=mongoose.Schema({
-    name:{type:String,max:25},
-    photo:{type:String},
-    email:{type:String,unique:true},
-    password:{type:String,max:6,unique: true}
+const mongoose = require("mongoose");
+const DataSchema = mongoose.Schema({
+    email: {type: String, unique: true},
+    firstName: {type: String},
+    lastName: {type: String},
+    password: {type: String},
+    photo: {type: String},
+    createdDate: {type: Date, default: Date.now()}
+}, {versionKey: false});
 
-},{versionKey:false})
+const UserModel = mongoose.model('users', DataSchema);
 
-const UserModel=mongoose.model('users',DataSchema)
-
-module.exports=UserModel
+module.exports = UserModel
