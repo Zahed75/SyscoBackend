@@ -1,5 +1,6 @@
 var nodemailer = require('nodemailer');
 
+//SMTP SETUP
 const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
 
     var transporter = nodemailer.createTransport({
@@ -12,7 +13,7 @@ const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
     });
 
     let mailOptions = {
-        from: 'Syscomatic-Inventory Management System <tech.syscomatic@gmail.com>',
+        from: 'Syscomatic-Technologies  <tech.syscomatic@gmail.com>',
         to: EmailTo,
         subject: EmailSubject,
         text: EmailText
