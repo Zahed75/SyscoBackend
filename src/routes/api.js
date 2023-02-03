@@ -1,5 +1,5 @@
 const express = require('express');
-const ProfileController=require("../controllers/ProfileController")
+const ProfileController=require("../controllers/users/ProfileController")
 const AuthVerifyMiddleware=require("../middlewares/AuthVerifyMiddleware")
 const router = express.Router();
 
