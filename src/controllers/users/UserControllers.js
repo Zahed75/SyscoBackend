@@ -39,3 +39,25 @@ exports.ProfileDetails = async (req, res) => {
     res.status(200).json(Result)
 }
 
+// Recover Verify Email
+
+exports.RecoverVerifyEmail = async (req, res) => {
+    let Result = await UserVerifyEmailService(req, DataModel)
+    res.status(200).json(Result)
+}
+
+//Recover OTP
+
+exports.RecoverVerifyOTP = async (req, res) => {
+    let Result = await UserVerifyOtpService(req, OTPSModel)
+    res.status(200).json(Result)
+}
+
+//Reset Password
+
+exports.RecoverResetPass = async (req, res) => {
+    let Result = await UserResetPassService(req, DataModel)
+    res.status(200).json(Result)
+}
+
+
