@@ -13,7 +13,7 @@ router.post("/Login", UserController.Login)
 router.post("/ProfileUpdate", AuthVerifyMiddleware, UserController.ProfileUpdate)
 router.post("/ProfileDetails",AuthVerifyMiddleware,UserController.ProfileDetails)
 //TOKEN NOT NEEDED
-router.post("/RecoverVerifyEmail/:email",UserController.RecoverVerifyEmail)
-router.post("/RecoverVerifyOtp/:email/:otp",UserController.RecoverVerifyOTP);
+router.get("/RecoverVerifyEmail/:email",UserController.RecoverVerifyEmail)
+router.get("/RecoverVerifyOtp/:email/:otp",UserController.RecoverVerifyOTP);
 router.post("/RecoverResetPass",UserController.RecoverResetPass);
 module.exports = router;

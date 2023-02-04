@@ -8,7 +8,7 @@ const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
         port: 587,
         auth: {
             user: "tech.syscomatic@gmail.com",
-            pass: "dhmjzcefemgcficw"
+            pass: "htolqpsalypfpdmg"
         }
     });
 

@@ -18,11 +18,10 @@ exports.Registration = async (req, res) => {
 
 //User Login
 
-exports.Login = async (req, res) => {
-    let Result = await UserLoginService(req, DataModel)
+exports.Login=async(req,res)=>{
+    let Result=await UserLoginService(req,DataModel)
     res.status(200).json(Result)
 }
-
 
 //User Profile Update
 
