@@ -19,7 +19,7 @@ router.get("/RecoverVerifyOtp/:email/:otp",UserController.RecoverVerifyOTP);
 router.post("/RecoverResetPass",UserController.RecoverResetPass);
 
 //BlogEndPoint Start
-router.post("/CreateBlog",BlogController.CreateBlog);
+router.post("/CreateBlog",AuthVerifyMiddleware,BlogController.CreateBlog);
 
 
 module.exports = router;

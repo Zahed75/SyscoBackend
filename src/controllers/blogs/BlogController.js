@@ -1,6 +1,4 @@
 const BlogModel = require("../../models/blogs/BlogModel");
-
-
 const CreateBlogService = require("../../services/blogs/CreateBlogService");
 
 
