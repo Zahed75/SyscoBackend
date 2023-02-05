@@ -20,6 +20,7 @@ router.post("/RecoverResetPass",UserController.RecoverResetPass);
 
 //BlogEndPoint Start
 router.post("/CreateBlog",AuthVerifyMiddleware,BlogController.CreateBlog);
-
+router.get("/AllBlogList",BlogController.AllBlog);
+router.post("/BlogUpdate",AuthVerifyMiddleware,BlogController.BlogUpdate);
 
 module.exports = router;

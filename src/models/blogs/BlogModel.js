@@ -5,6 +5,7 @@ const DataSchema = mongoose.Schema({
        type:mongoose.Types.ObjectId,
         ref:"users",
         type:String
+
     },
 
     blogTitle: {
@@ -28,7 +29,7 @@ const DataSchema = mongoose.Schema({
         default: Date.now()
     }
 
-})
+},{VersionKey:false})
 
 const BlogModel = mongoose.model('blogs', DataSchema);
 module.exports = BlogModel,User
