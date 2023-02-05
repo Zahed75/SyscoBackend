@@ -1,6 +1,8 @@
 const DeleteBlogService=async(Request, BlogDb)=>{
     try{
-        let data=await  BlogDb.remove({email:Request.headers['email']},Request.body)
+        let id=Request.params.id;
+        let Query={_id:id};
+        let data=await  BlogDb.remove({Query,email:Request.headers['email']},Request.body)
 
         return{status:"Blog Remove SuccessFully!",data:data}
     }
@@ -11,3 +13,5 @@ const DeleteBlogService=async(Request, BlogDb)=>{
 }
 
 module.exports=DeleteBlogService;
+
+
