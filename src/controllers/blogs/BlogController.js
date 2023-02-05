@@ -2,7 +2,7 @@ const BlogDb = require("../../models/blogs/BlogModel");
 const CreateBlogService = require("../../services/blogs/CreateBlogService");
 const AllBlogService=require("../../services/blogs/AllPostService");
 const EditBlogService = require("../../services/blogs/EditBlogService");
-const DataModel = require("../../models/users/UserModel");
+const DeleteBrandService=require("../../services/blogs/DeleteBrandService");
 
 
 
@@ -24,5 +24,13 @@ exports.AllBlog=async (req,res)=>{
 
 exports.BlogUpdate=async (req,res)=>{
     let Result = await EditBlogService(req, BlogDb)
+    res.status(200).json(Result)
+}
+
+//Delete Blog
+
+
+exports.BlogDelete=async(req,res)=>{
+    let Result = await DeleteBrandService(req, BlogDb)
     res.status(200).json(Result)
 }

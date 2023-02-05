@@ -22,5 +22,6 @@ router.post("/RecoverResetPass",UserController.RecoverResetPass);
 router.post("/CreateBlog",AuthVerifyMiddleware,BlogController.CreateBlog);
 router.get("/AllBlogList",BlogController.AllBlog);
 router.post("/BlogUpdate",AuthVerifyMiddleware,BlogController.BlogUpdate);
+router.post("/BlogDelete/")
 
 module.exports = router;
