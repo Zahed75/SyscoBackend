@@ -24,4 +24,9 @@ router.get("/AllBlogList",BlogController.AllBlog);
 router.post("/BlogUpdate",AuthVerifyMiddleware,BlogController.BlogUpdate);
 router.get("/BlogDelete/:id",AuthVerifyMiddleware,BlogController.BlogDelete);
 
+//DONT NEED AUTH
+
+router.get("/searchBlogSlug/:slug",BlogController.BlogDetailsBySlug);
+
+
 module.exports = router;
