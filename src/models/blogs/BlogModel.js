@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-var slug = require('mongoose-slug-generator');
+const slug = require('mongoose-slug-generator');
 const User=require("../../models/users/UserModel")
 mongoose.plugin(slug);
 const DataSchema = mongoose.Schema({
@@ -11,13 +11,14 @@ const DataSchema = mongoose.Schema({
     },
 
     blogTitle: {
-        type: String,
+        type:String,
         trim: true,
         required: [true, 'Please enter the blog title'],
         max: 220,
-        slug: { type: String, slug: "title" }
+
 
     },
+    slug: { type: String, slug: "blogTitle" },
     blogImg: {
         type: String
     },
@@ -32,7 +33,7 @@ const DataSchema = mongoose.Schema({
         default: Date.now()
     }
 
-},{VersionKey:false})
+},{timestamps:true})
 
 const BlogModel = mongoose.model('blogs', DataSchema);
 module.exports = BlogModel,User

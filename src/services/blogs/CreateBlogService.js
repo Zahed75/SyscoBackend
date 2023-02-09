@@ -14,3 +14,28 @@ const CreateBlogService=async (Request,BlogDb)=>{
 
 
 module.exports=CreateBlogService
+
+
+
+// RAW Algo
+// const mongodb = require("mongodb");
+// const MongoClient = mongodb.MongoClient;
+// const uri = "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test?retryWrites=true&w=majority";
+//
+// const createSlug = title => {
+//     return title
+//         .toLowerCase()
+//         .replace(/[^a-z0-9]+/g, "-")
+//         .replace(/^-+|-+$/g, "");
+// };
+//
+// const addBlogPost = async (title, content) => {
+//     const client = new MongoClient(uri, { useNewUrlParser: true });
+//     await client.connect();
+//     const db = client.db("test");
+//     const blogPosts = db.collection("blogposts");
+//     const slug = createSlug(title);
+//     const result = await blogPosts.insertOne({ title, content, slug });
+//     console.log(`Inserted blog post with id: ${result.insertedId}`);
+//     client.close();
+// };
