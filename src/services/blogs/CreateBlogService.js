@@ -17,7 +17,7 @@ module.exports=CreateBlogService
 
 
 
-// RAW Algo
+// RAW Algo for slug field
 // const mongodb = require("mongodb");
 // const MongoClient = mongodb.MongoClient;
 // const uri = "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test?retryWrites=true&w=majority";

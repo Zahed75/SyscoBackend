@@ -18,7 +18,14 @@ const DataSchema = mongoose.Schema({
 
 
     },
-    slug: { type: String, slug: "blogTitle" },
+    category:{
+        type:String,
+        require:[true,"Please Enter the category!"],
+        max:75,
+    },
+
+    slug: { type: String, slug: "blogTitle",unique:true},
+
     blogImg: {
         type: String
     },
