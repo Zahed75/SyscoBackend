@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+var slug = require('mongoose-slug-generator');
 const User=require("../../models/users/UserModel")
+mongoose.plugin(slug);
 const DataSchema = mongoose.Schema({
     email: {
        type:mongoose.Types.ObjectId,
@@ -13,6 +15,7 @@ const DataSchema = mongoose.Schema({
         trim: true,
         required: [true, 'Please enter the blog title'],
         max: 220,
+        slug: { type: String, slug: "title" }
 
     },
     blogImg: {
