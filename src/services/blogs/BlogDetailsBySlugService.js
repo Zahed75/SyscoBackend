@@ -1,6 +1,6 @@
 const BlogDetailsBySlugService=async(Request,BlogDb)=>{
     try{
-        let slug=req.params.slug;
+        let slug=Request.params.slug;
         BlogDb.aggregate([
             {$match:{slug:slug}},
             {
