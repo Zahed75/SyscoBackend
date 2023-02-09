@@ -7,7 +7,7 @@ const BlogDetailsBySlugService=async(Request,BlogDb)=>{
                 $project:{
                     _id:1,slug:1,
                     createdDate:{
-                        date: "$brandCreated",
+                        date: "$createdDate",
                         format: "%d-%m-%Y"
                     }
                 }
