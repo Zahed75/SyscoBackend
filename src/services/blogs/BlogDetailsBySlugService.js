@@ -1,23 +1,18 @@
-const BlogDetailsBySlugService=async(Request,BlogDb)=>{
-    try{
-        let slug=Request.params.slug;
-        BlogDb.aggregate([
-            {$match:{slug:slug}},
-            {
-                $project:{
-                    _id:1,slug:1,
-                    createdDate:{
-                        date: "$createdDate",
-                        format: "%d-%m-%Y"
-                    }
-                }
-            }
-        ])
-    }
-    catch(error){
+const BlogDetailsBySlugService = async (Request, BlogDb) => {
+    try {
+        let slug = Request.params.slug;
+        console.log("slug",slug)
+        // let email = Request.headers['email'];
+        // console.log("check user",email)
+        let data = await BlogDb.aggregate([
+            {$match: {slug: slug}}
 
+        ])
+        return {status: "success", data: data}
+    } catch (error) {
+        return {status: "Failed", data: error.toString()}
     }
 }
 
 
-module.exports=BlogDetailsBySlugService;
+module.exports = BlogDetailsBySlugService;
