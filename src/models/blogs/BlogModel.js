@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
 const slug = require('mongoose-slug-generator');
-const User=require("../../models/users/UserModel")
+
 mongoose.plugin(slug);
 const DataSchema = mongoose.Schema({
-    email: {
-       type:mongoose.Types.ObjectId,
-        ref:"users",
-        type:String
+    user: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"user",
+
 
     },
-
     blogTitle: {
         type:String,
         trim: true,
@@ -40,7 +39,9 @@ const DataSchema = mongoose.Schema({
         default: Date.now()
     }
 
+
+
 },{timestamps:true})
 
 const BlogModel = mongoose.model('blogs', DataSchema);
-module.exports = BlogModel,User
+module.exports = BlogModel

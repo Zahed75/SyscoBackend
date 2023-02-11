@@ -2,8 +2,7 @@ const BlogDetailsBySlugService = async (Request, BlogDb) => {
     try {
         let slug = Request.params.slug;
         console.log("slug",slug)
-        // let email = Request.headers['email'];
-        // console.log("check user",email)
+
         let data = await BlogDb.aggregate([
             {$match: {slug: slug}}
 
@@ -15,4 +14,5 @@ const BlogDetailsBySlugService = async (Request, BlogDb) => {
 }
 
 
-module.exports = BlogDetailsBySlugService;
+module.exports = BlogDetailsBySlugService
+

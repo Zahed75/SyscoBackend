@@ -1,7 +1,11 @@
 const AllPostService = async (Request, BlogDb) => {
     try {
-        let PostBody = Request.body;
-        let data = await BlogDb.find(PostBody)
+
+
+        let data = await BlogDb.find({}).populate("user","-firstName -password");
+
+
+
         return {status: "success", data: data}
 
     } catch (error) {
@@ -10,3 +14,6 @@ const AllPostService = async (Request, BlogDb) => {
 }
 
 module.exports = AllPostService
+
+
+

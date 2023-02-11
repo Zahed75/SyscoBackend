@@ -6,9 +6,10 @@ const DataSchema = mongoose.Schema({
     lastName: {type: String},
     password: {type: String},
     photo: {type: String},
-    createdDate: {type: Date, default: Date.now()}
+    createdDate: {type: Date, default: Date.now()},
+
 }, {versionKey: false});
 
-const UserModel = mongoose.model('users', DataSchema);
+const UserModel = mongoose.model('user', DataSchema);
 
 module.exports = UserModel

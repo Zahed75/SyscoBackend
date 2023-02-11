@@ -18,9 +18,13 @@ router.get("/RecoverVerifyEmail/:email",UserController.RecoverVerifyEmail);
 router.get("/RecoverVerifyOtp/:email/:otp",UserController.RecoverVerifyOTP);
 router.post("/RecoverResetPass",UserController.RecoverResetPass);
 
+
+
 //BlogEndPoint Start
 router.post("/CreateBlog",AuthVerifyMiddleware,BlogController.CreateBlog);
 router.get("/AllBlogList",BlogController.AllBlog);
+
+
 router.post("/BlogUpdate",AuthVerifyMiddleware,BlogController.BlogUpdate);
 router.get("/BlogDelete/:id",AuthVerifyMiddleware,BlogController.BlogDelete);
 

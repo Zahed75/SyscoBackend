@@ -4,7 +4,7 @@ const UserLoginService = async (Request, DataModel) => {
     try {
         let data = await DataModel.aggregate([{$match: Request.body}, {
             $project: {
-                _id: 0,
+                _id: 1,
                 email: 1,
                 firstName: 1,
                 lastName: 1,
