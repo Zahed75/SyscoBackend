@@ -3,8 +3,8 @@ const CreateBlogService = require("../../services/blogs/CreateBlogService");
 const AllBlogService = require("../../services/blogs/AllPostService");
 const EditBlogService = require("../../services/blogs/EditBlogService");
 const DeleteBlogService = require("../../services/blogs/DeleteBlogService");
-const BlogDetailsBySlugService=require("../../services/blogs/BlogDetailsBySlugService");
-
+const BlogDetailsBySlugService = require("../../services/blogs/BlogDetailsBySlugService");
+const FilterBlogService=require("../../services/blogs/FilterBlogService");
 
 // CreateBlog
 exports.CreateBlog = async (req, res) => {
@@ -33,7 +33,14 @@ exports.BlogDelete = async (req, res) => {
 
 //BlogDetailsBySlug
 
-exports.BlogDetailsBySlug=async (req,res)=>{
-    let Result=await BlogDetailsBySlugService(req,BlogDb)
+exports.BlogDetailsBySlug = async (req, res) => {
+    let Result = await BlogDetailsBySlugService(req, BlogDb)
+    res.status(200).json(Result)
+}
+
+//Filter By Category
+
+exports.FilterByCategory = async (req, res) => {
+    let Result=await FilterBlogService(req,BlogDb)
     res.status(200).json(Result)
 }
