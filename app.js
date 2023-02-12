@@ -2,7 +2,7 @@
 const express = require('express');
 const router = require("./src/routes/api");
 const app = new express();
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 
 // Security Middleware Lib Import
 const rateLimit = require('express-rate-limit');
@@ -12,25 +12,54 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
 
+// const blogs=require('./src/models/blogs/BlogModel')
+
+//ADMIN BRO
+
 
 // Database Lib Import
 const mongoose = require('mongoose');
 
 
+
+//ADMIN PANEL CONFIG
+
+
+
 // Security Middleware Implement
 app.use(cors())
-app.use(helmet())
+// app.use(helmet())
+
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+            styleSrc: ["'self'", "https:", "'unsafe-inline'"],
+            baseUri: ["'self'"],
+            fontSrc: ["'self'", "https:", "data:"]
+        }
+    }
+}));
 app.use(mongoSanitize())
 app.use(xss())
 app.use(hpp())
 
 app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'}));
+// app.use(express.urlencoded({limit: '50mb'}));
 
 mongoose.set('strictQuery', false);
 
+
+
+
+
+
+
+
 // Body Parser Implement
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
+app.use(express.json())
 
 // Request Rate Limit
 const limiter = rateLimit({windowMs: 15 * 60 * 1000, max: 3000})
@@ -51,9 +80,9 @@ mongoose.connect(URI, OPTION, (error) => {
 app.use("/api/v1", router)
 
 // Undefined Route Implement
-app.use("*", (req, res) => {
-    res.status(404).json({status: "fail", data: "Not Found"})
-})
+// app.use("*", (req, res) => {
+//     res.status(404).json({status: "fail", data: "Not Found"})
+// })
 
 
 module.exports = app;
@@ -61,7 +90,7 @@ module.exports = app;
 
 
 
-// http://localhost:8080/api/v1
+
 
 
 
