@@ -31,7 +31,7 @@ router.get("/BlogDelete/:id", AuthVerifyMiddleware, BlogController.BlogDelete);
 
 router.get("/searchBlogSlug/:slug", BlogController.BlogDetailsBySlug);
 
-router.get("/FilterByBlog/:category", BlogController.FilterByCategory);
+router.post("/FilterByBlog", BlogController.FilterByCategory);
 
 
 module.exports = router;

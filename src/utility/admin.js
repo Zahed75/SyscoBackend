@@ -42,7 +42,7 @@ const initAdminJS = (app) => {
     app.use(admin.options.rootPath, adminRouter);
 
     console.log(
-       ` AdminJS started on http://localhost:${PORT}${admin.options.rootPath}`
+       ` AdminJS started on http://localhost":${PORT}${admin.options.rootPath}`
     );
 };
 

@@ -12,12 +12,10 @@ const log = (msg) => console.log(msg);
 exports.connectWithDb = async () => {
     try {
         await mongoose.connect(uri, options);
-        log('Connected to  database');
+        log('Connection Success');
     } catch (err) {
         log(err);
         process.exit(1);
     }
 };
 
-// exports.disconnectFromDB() {
-//     return mongoose.connection.close();

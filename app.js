@@ -35,9 +35,9 @@ app.use(helmet({
         directives: {
             defaultSrc: ["'self'"],
             scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-            styleSrc: ["'self'", "https:", "'unsafe-inline'"],
+            styleSrc: ["'self'", "https:","http:", "'unsafe-inline'"],
             baseUri: ["'self'"],
-            fontSrc: ["'self'", "https:", "data:"]
+            fontSrc: ["'self'", "https:","http:", "data:"]
         }
     }
 }));
@@ -46,9 +46,9 @@ app.use(xss())
 app.use(hpp())
 
 app.use(express.json({limit: '50mb'}));
-// app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
 
-mongoose.set('strictQuery', false);
+
 
 
 
