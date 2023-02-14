@@ -11,8 +11,8 @@ const UserSendEmailService=async (req, res) => {
     const mailOptions = {
         from: req.body.email,
         to: 'tech.syscomatic@gmail.com',
-        subject: 'New Email from your API',
-        text: req.body.message,
+        subject: req.body.subject,
+        text: req.body.text,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -21,7 +21,7 @@ const UserSendEmailService=async (req, res) => {
             res.status(500).send('Could not send email');
         } else {
             console.log('Email sent: ' + info.response);
-            res.status(200).send('Email sent successfully');
+            res.status(200).send('Email sent successfully',info);
         }
     });
 };
