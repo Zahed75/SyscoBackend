@@ -7,7 +7,12 @@ const DataSchema = mongoose.Schema({
     }
 
 
-},{versionKey: false})
+}, {versionKey: false})
+
+
+
 
 const brandLogoModel = mongoose.model('brandLogo', DataSchema);
+
+
 module.exports = brandLogoModel;

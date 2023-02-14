@@ -36,6 +36,6 @@ router.post("/FilterByBlog", BlogController.FilterByCategory);
 router.post("/sendMail",UserController.SendMail);
 
 //BrandLOGO API
-
 router.post("/logoUpload",BrandController.uploadBrand);
+router.post("/createFeature",BrandController.createFeature);
 module.exports = router;
