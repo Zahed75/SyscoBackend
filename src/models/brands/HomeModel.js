@@ -10,8 +10,6 @@ const DataSchema = mongoose.Schema({
 }, {versionKey: false})
 
 
-
-
 const brandLogoModel = mongoose.model('brandLogo', DataSchema);
 
 

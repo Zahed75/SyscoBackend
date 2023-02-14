@@ -17,7 +17,7 @@ const Accordion = mongoose.Schema({
 
     }
 
-})
+},{versionKey:false})
 
 const accordion = mongoose.model('accordion', Accordion)
 module.exports=accordion;
