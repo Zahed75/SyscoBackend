@@ -44,5 +44,6 @@ router.post("/createService", BrandController.createService);
 router.get("/getAllService", BrandController.allService);
 router.post("/createPortfolio", PortfolioController.createPortfolio);
 router.get("/getAllPortfolio", PortfolioController.getAllPortfolio);
+router.get("/searchPortfolio/:slug", PortfolioController.searchPortfolio);
 
 module.exports = router;
