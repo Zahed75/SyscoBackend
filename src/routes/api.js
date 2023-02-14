@@ -38,4 +38,5 @@ router.post("/sendMail",UserController.SendMail);
 //BrandLOGO API
 router.post("/logoUpload",BrandController.uploadBrand);
 router.post("/createFeature",BrandController.createFeature);
+router.get("/getAllAccordion",BrandController.allAccordion);
 module.exports = router;
