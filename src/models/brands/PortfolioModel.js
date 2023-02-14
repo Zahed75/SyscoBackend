@@ -10,8 +10,7 @@ const PortfolioSchema = mongoose.Schema({
         require: [true, "Please Enter project title"]
     },
     portfolioImage: {
-        data: buffer,
-        contentType: String
+       type:String
     },
     slug: {
         type: String,

@@ -2,8 +2,8 @@ const express = require('express');
 const AuthVerifyMiddleware = require("../middlewares/AuthVerifyMiddleware");
 const UserController = require("../controllers/users/UserControllers");
 const BlogController = require("../controllers/blogs/BlogController");
-const BrandController=require("../controllers/brands/BrandController");
-const ProfileController=require("../controllers/brands/PortfolioController");
+const BrandController = require("../controllers/brands/BrandController");
+const PortfolioController = require("../controllers/brands/PortfolioController");
 const router = express.Router();
 
 
@@ -34,14 +34,15 @@ router.get("/searchBlogSlug/:slug", BlogController.BlogDetailsBySlug);
 router.post("/FilterByBlog", BlogController.FilterByCategory);
 
 //SEND MAIL API FROM USER
-router.post("/sendMail",UserController.SendMail);
+router.post("/sendMail", UserController.SendMail);
 
 //BrandLOGO +Home Section API
-router.post("/logoUpload",BrandController.uploadBrand);
-router.post("/createFeature",BrandController.createFeature);
-router.get("/getAllAccordion",BrandController.allAccordion);
-router.post("/createService",BrandController.createService);
-router.get("/getAllService",BrandController.allService);
-router.post("/createPortfolio",ProfileController.createPortfolio);
+router.post("/logoUpload", BrandController.uploadBrand);
+router.post("/createFeature", BrandController.createFeature);
+router.get("/getAllAccordion", BrandController.allAccordion);
+router.post("/createService", BrandController.createService);
+router.get("/getAllService", BrandController.allService);
+router.post("/createPortfolio", PortfolioController.createPortfolio);
+router.get("/getAllPortfolio", PortfolioController.getAllPortfolio);
 
 module.exports = router;
