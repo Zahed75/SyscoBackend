@@ -2,6 +2,7 @@ const express = require('express');
 const AuthVerifyMiddleware = require("../middlewares/AuthVerifyMiddleware");
 const UserController = require("../controllers/users/UserControllers");
 const BlogController = require("../controllers/blogs/BlogController");
+const BrandController=require("../controllers/brands/BrandController");
 const router = express.Router();
 
 
@@ -31,8 +32,10 @@ router.get("/BlogDelete/:id", AuthVerifyMiddleware, BlogController.BlogDelete);
 router.get("/searchBlogSlug/:slug", BlogController.BlogDetailsBySlug);
 router.post("/FilterByBlog", BlogController.FilterByCategory);
 
-
 //SEND MAIL API FROM USER
-
 router.post("/sendMail",UserController.SendMail);
+
+//BrandLOGO API
+
+router.post("/logoUpload",BrandController.uploadBrand);
 module.exports = router;

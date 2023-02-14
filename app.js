@@ -2,6 +2,7 @@
 const express = require('express');
 const router = require("./src/routes/api");
 const app = new express();
+const multer = require('multer');
 // const bodyParser = require('body-parser');
 
 // Security Middleware Lib Import
@@ -15,15 +16,8 @@ const cors = require('cors');
 // const blogs=require('./src/models/blogs/BlogModel')
 
 
-
-
 // Database Lib Import
 const mongoose = require('mongoose');
-
-
-
-//ADMIN PANEL CONFIG
-
 
 
 // Security Middleware Implement
@@ -50,16 +44,17 @@ app.use(express.json({limit: '50mb'}));
 // app.use(express.urlencoded({limit: '50mb'}));
 
 
-
-
-
-
-
-
-
 // Body Parser Implement
 // app.use(bodyParser.json())
 app.use(express.json())
+
+
+
+
+// MULTER CONFIG
+
+
+
 
 // Request Rate Limit
 const limiter = rateLimit({windowMs: 15 * 60 * 1000, max: 3000})
