@@ -39,4 +39,5 @@ router.post("/sendMail",UserController.SendMail);
 router.post("/logoUpload",BrandController.uploadBrand);
 router.post("/createFeature",BrandController.createFeature);
 router.get("/getAllAccordion",BrandController.allAccordion);
+router.post("/createService",BrandController.createService);
 module.exports = router;
