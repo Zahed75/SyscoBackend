@@ -8,7 +8,7 @@ const UserDetailsService = require("../../services/users/UserDetailsService");
 const UserResetPassService = require("../../services/users/UserResetPassService");
 const UserVerifyOtpService = require("../../services/users/UserVerifyOtpService");
 const UserVerifyEmailService = require("../../services/users/UserVerifyEmailService");
-
+const UserSendMailService=require("../../services/common/UserSendMailService");
 
 // User Registrations
 exports.Registration = async (req, res) => {
@@ -59,4 +59,11 @@ exports.RecoverResetPass = async (req, res) => {
     res.status(200).json(Result)
 }
 
+
+//SEND MAIL FROM USER
+
+exports.SendMail=async (req,res)=>{
+    let Result=await UserSendMailService(req)
+    res.status(200).json(Result);
+}
 

@@ -2,8 +2,7 @@ const AllPostService = async (Request, BlogDb) => {
     try {
 
 
-        let data = await BlogDb.find({}).populate("user","-lastName -password");
-
+        let data = await BlogDb.find({}).populate("user", " -password");
 
 
         return {status: "success", data: data}

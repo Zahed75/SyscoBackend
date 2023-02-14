@@ -35,9 +35,9 @@ app.use(helmet({
         directives: {
             defaultSrc: ["'self'"],
             scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-            styleSrc: ["'self'", "https:","http:", "'unsafe-inline'"],
+            styleSrc: ["'self'", "https:", "'unsafe-inline'"],
             baseUri: ["'self'"],
-            fontSrc: ["'self'", "https:","http:", "data:"]
+            fontSrc: ["'self'", "https:", "data:"]
         }
     }
 }));
@@ -69,11 +69,11 @@ app.use(limiter)
 let URI = "mongodb://127.0.0.1:27017/sysco_hall";
 
 
-let OPTION = {user: "", pass: "", autoIndex: true}
-mongoose.connect(URI, OPTION, (error) => {
-    console.log("Connection Success")
-    console.log(error)
-})
+// let OPTION = {user: "", pass: "", autoIndex: true}
+// mongoose.connect(URI, OPTION, (error) => {
+//     console.log("Connection Success")
+//     console.log(error)
+// })
 
 
 // Routing Implement
