@@ -3,8 +3,9 @@ const OTPSModel = require("../models/users/OTPSModel");
 const UserModel = require("../models/users/UserModel");
 const brandLogoModel=require("../models/brands/HomeModel");
 const accordionModel=require("../models/brands/AccordionModel");
+const ServiceModel=require("../models/brands/ServiceModel");
 
 
 module.exports = {
-    BlogModel, OTPSModel, UserModel,brandLogoModel,accordionModel
+    BlogModel, OTPSModel, UserModel,brandLogoModel,accordionModel,ServiceModel
 }
