@@ -37,9 +37,10 @@ const initAdminJS = (app) => {
         cookiePassword: 'Z@hed1234',
     });
 
-    // const adminRouter = AdminJSExpress.buildRouter(admin );
+
 
     app.use(admin.options.rootPath, adminRouter);
+
 
     console.log(
        ` AdminJS started on http://localhost":${PORT}${admin.options.rootPath}`
