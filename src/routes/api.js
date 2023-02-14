@@ -40,4 +40,5 @@ router.post("/logoUpload",BrandController.uploadBrand);
 router.post("/createFeature",BrandController.createFeature);
 router.get("/getAllAccordion",BrandController.allAccordion);
 router.post("/createService",BrandController.createService);
+router.get("/getAllService",BrandController.allService);
 module.exports = router;
