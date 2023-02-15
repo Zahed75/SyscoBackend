@@ -31,7 +31,7 @@ router.get("/BlogDelete/:id", AuthVerifyMiddleware, BlogController.BlogDelete);
 
 //DONT NEED AUTH
 router.get("/searchBlogSlug/:slug", BlogController.BlogDetailsBySlug);
-router.post("/FilterByBlog", BlogController.FilterByCategory);
+router.get("/FilterByBlog", BlogController.FilterByCategory);
 
 //SEND MAIL API FROM USER
 router.post("/sendMail", UserController.SendMail);
