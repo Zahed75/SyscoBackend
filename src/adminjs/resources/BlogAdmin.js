@@ -1,35 +1,37 @@
-const BLogModel = require("../../models/blogs/BlogModel");
-const upload = require('@adminjs/upload')
-const path=require('path')
-const localProvider = {
+const BLogModel = require('../../models/blogs/BlogModel');
+const upload = require('@adminjs/upload');
+const { UploadProvider } = require('../utils/uploadProvider');
 
-    bucket: path.join(__dirname, '../../../public')
-
-
-};
 const BlogModel = {
-    resource: BLogModel,
-    options: {
-        properties: {
-            blogDescription: {
-                type: 'textarea',
-                props: {
-                    rows: 10,
-                },
-            },
+  resource: BLogModel,
+  options: {
+    properties: {
+      blogImg: {
+        isVisible: false,
+      },
+      blogDescription: {
+        type: 'textarea',
+        props: {
+          rows: 10,
         },
+      },
     },
-    features: [
-        upload({
-            provider: {local: localProvider},
-            properties: {
-                file: 'blog-image',
-                key: 'blogImg',
-                // mimeType: 'application/pdf',
-            },
-            validation: {mimeTypes: ['image/png','image/jpg', 'application/pdf', 'audio/mpeg']},
-        }),
-    ],
+  },
+  features: [
+    upload({
+      provider: new UploadProvider(),
+      properties: {
+        file: 'blog-image',
+        key: 'blogImg',
+      },
+      uploadPath: (record, filename) => {
+        return `${record.params.slug}.${filename.split('.').pop()}`;
+      },
+      validation: {
+        mimeTypes: ['image/png', 'image/jpg', 'application/pdf', 'audio/mpeg'],
+      },
+    }),
+  ],
 };
 
 module.exports = BlogModel;
