@@ -13,6 +13,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
 
+
 // const blogs=require('./src/models/blogs/BlogModel')
 
 
@@ -39,6 +40,7 @@ app.use(helmet({
 app.use(mongoSanitize())
 app.use(xss())
 app.use(hpp())
+app.use('/public', express.static('public'));
 
 app.use(express.json({limit: '50mb'}));
 // app.use(express.urlencoded({limit: '50mb'}));

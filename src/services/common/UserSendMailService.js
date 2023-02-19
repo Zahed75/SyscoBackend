@@ -13,6 +13,7 @@ const UserSendEmailService=async (req, res) => {
         to: 'tech.syscomatic@gmail.com',
         subject: req.body.subject,
         text: req.body.text,
+        replyTo: req.body.from
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
