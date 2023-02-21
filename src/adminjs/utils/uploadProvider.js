@@ -39,6 +39,8 @@ class UploadProvider extends BaseProvider {
         ); // adjusting file path according to OS
     }
 
+
+
     // eslint-disable-next-line class-methods-use-this
     path(key, bucket) {
         // Windows doesn't requires the '/' in path, while UNIX system does

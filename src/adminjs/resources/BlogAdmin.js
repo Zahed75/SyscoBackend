@@ -5,6 +5,7 @@ const { UploadProvider } = require('../utils/uploadProvider');
 const BlogModel = {
   resource: BLogModel,
   options: {
+    listProperties: ['blogTitle','category','blogImg','blogDescription','user'],
     properties: {
       blogImg: {
         isVisible: false,
@@ -28,7 +29,7 @@ const BlogModel = {
         return `${record.params.slug}.${filename.split('.').pop()}`;
       },
       validation: {
-        mimeTypes: ['image/png', 'image/jpg', 'application/pdf', 'audio/mpeg'],
+        mimeTypes: [],
       },
     }),
   ],
