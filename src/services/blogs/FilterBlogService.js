@@ -1,7 +1,7 @@
 const FilterBlogService = async (Request, BlogDb) => {
     try {
-      let id=Request.body.id;
-      let category=Request.body.category;
+      let id=Request.params.id;
+      let category=Request.params.category;
       let data=await  BlogDb.aggregate([
           {$match:{id:id,category:category}}
       ])
