@@ -1,0 +1,9 @@
+td[data-css='blogs-blogDescription-table-cell'] {
+  width: 350px;
+}
+section[data-css='blogs-list-blogDescription'] {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
