@@ -38,10 +38,8 @@ router.post("/sendMail", UserController.SendMail);
 
 //BrandLOGO +Home Section API
 router.post("/logoUpload", BrandController.uploadBrand);
-router.post("/createFeature", BrandController.createFeature);
-router.get("/getAllAccordion", BrandController.allAccordion);
-router.post("/createService", BrandController.createService);
-router.get("/getAllService", BrandController.allService);
+
+
 router.post("/createPortfolio", PortfolioController.createPortfolio);
 router.get("/getAllPortfolio", PortfolioController.getAllPortfolio);
 router.get("/searchPortfolio/:slug", PortfolioController.searchPortfolio);
