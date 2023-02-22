@@ -36,6 +36,9 @@ const initAdminJS = (app) => {
       favicon: '/public/favicon.ico',
       withMadeWithLove: false,
     },
+    assets: {
+      styles: ['/public/assets/styles/adminjs.modules.css'],
+    },
   };
 
   const admin = new AdminJS(adminOptions);
