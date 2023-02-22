@@ -1,11 +1,8 @@
-FROM node:16-alpine
+FROM node:9-slim
 WORKDIR /app
-# Copy and download dependencies
-COPY package.json yarn.lock ./
-RUN yarn --frozen-lockfile
+COPY package.json /app
 
-# Copy the source files into the image
-COPY . .
-EXPOSE 4000
+RUN npm install
+COPY . ./app
 
-CMD yarn start
+CMD ["npm","start"]
