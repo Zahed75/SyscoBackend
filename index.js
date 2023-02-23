@@ -1,6 +1,6 @@
 const app = require("./app");
 const initAdminJS=require("./src/adminjs/index")
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 3000
 const {connectWithDb} =require("./src/utility/mongo")
 
 
